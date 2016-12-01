@@ -53,6 +53,7 @@ DT
 #四. 請計算 Table 2 中的下列各子題 (30%)
 #(a) 請計算各島環境因子(total_cover, C, EC, ..., etc.) 的平均、 第一四分位數、中位數、第三四分位數、最大值及最小值以及標準差，並整理成如下表格：
 twodata = fread(file.choose(),header=T)
+
 mean_omit_na = function(x){
   x = as.numeric(x)
   return(mean(x, na.rm=T))
@@ -68,4 +69,13 @@ cmin = function(x) {
 }
 twodatasss2 <- aggregate(.~ island, twodata, cmax)
 twodatasss3 <- aggregate(.~ island, twodata, cmin)
+twodatasss4 <- aggregate(.~ island, twodata, sd)
+
 #(b) 請分別列出 C, EC, K, Na, N 最高的五個樣區(plotid)
+max(twodata$C)
+max(twodata$EC)
+max(twodata$K)
+max(twodata$Na)
+max(twodata$N)
+
+
